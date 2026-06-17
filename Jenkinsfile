@@ -38,7 +38,8 @@ pipeline {
                         sudo apt install nginx -y &&
                         sudo systemctl enable nginx &&
                         sudo systemctl restart nginx &&
-                        sudo cp -r ${DEPLOY_DIR}/* /var/www/html/
+                        sudo cp -r ${DEPLOY_DIR}/* /var/www/html/ &&
+                        sudo curl http://localhost:80
                         '
                     """
                 }
