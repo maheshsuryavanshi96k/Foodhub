@@ -29,7 +29,7 @@ pipeline{
             steps{
                 echo 'Creating Nginx service...'
                 sh '''
-                    ssh -o StrictHostKeyChecking=no -i ${SSH_CRED} ${USER}@${TARGET_HOST_IP}
+                    ssh -o StrictHostKeyChecking=no ${USER}@${TARGET_HOST_IP}
                     sudo apt update &&
                     sudo apt install nginx -y &&
                     sudo systemctl start nginx &&
