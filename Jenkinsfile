@@ -40,7 +40,7 @@ pipeline {
                         sudo systemctl restart nginx &&
                         sudo rm -rf /var/www/html/* &&
                         sudo cp -r /home/ubuntu/Foodhub /var/www/html/ &&
-                        sudo curl http://localhost:80
+                        sudo curl http://localhost:80/Foofhub
                         '
                     """
                 }
@@ -50,7 +50,7 @@ pipeline {
         stage('Verify Deployment') {
             steps {
                 sh """
-                    curl http://${TARGET_HOST_IP}
+                    curl http://localhost:80/Foodhub}
                 """
             }
         }
