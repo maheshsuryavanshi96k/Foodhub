@@ -21,7 +21,7 @@ pipeline{
             steps{
                 echo 'SSH into target host...'
                 sh '''
-                    ssh -o StrictHostKeyChecking=no -i ${SSH_CRED} ${USER}@${TARGET_HOST_IP} 'mkdir -p ${DEPLOY_DIR}'
+                    ssh -o StrictHostKeyChecking=no ${USER}@${TARGET_HOST_IP} 'mkdir -p ${DEPLOY_DIR}'
                     scp -r * ${USER}@${TARGET_HOST_IP}:${DEPLOY_DIR}
             }
         }
